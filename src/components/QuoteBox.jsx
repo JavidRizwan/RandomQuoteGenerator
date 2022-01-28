@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Jumbotron, Button, Row, Col } from "react-bootstrap";
 
 const QuoteBox = () => {
   const [random, setRandom] = useState(0);
@@ -96,33 +95,32 @@ const QuoteBox = () => {
   let author = quotesArray[random].author;
 
   return (
-    <Row>
-      <Jumbotron id="quote-box">
-        <h3 id="text">{quote}</h3>
-        <h4 id="author">- {author}</h4>
-        <Row>
-          <Col>
-            <a
-              href={encodeURI(
-                `https://twitter.com/intent/tweet?text=${quote} - ${author}`
-              )}
-              id="tweet-quote"
-            >
-              <Button className="button">Tweet Quote</Button>
-            </a>
-          </Col>
-          <Col>
-            <Button
-              className="button"
-              onClick={() => generateRandom()}
-              id="new-quote"
-            >
-              New Quote
-            </Button>
-          </Col>
-        </Row>
-      </Jumbotron>
-    </Row>
+    <div id="quote-box" className="container">
+      <h3 className="row" id="text">
+        {quote}
+      </h3>
+      <h4 className="row" id="author">
+        - {author}
+      </h4>
+      <div className="row justify-content-around">
+        <a
+          className="btn col col-3"
+          href={encodeURI(
+            `https://twitter.com/intent/tweet?text=${quote} - ${author}`
+          )}
+          id="tweet-quote"
+        >
+          Tweet Quote
+        </a>
+        <button
+          className="btn col col-3"
+          onClick={() => generateRandom()}
+          id="new-quote"
+        >
+          New Quote
+        </button>
+      </div>
+    </div>
   );
 };
 

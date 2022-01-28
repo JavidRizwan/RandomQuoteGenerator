@@ -1,20 +1,17 @@
 import "./App.scss";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
 import QuoteBox from "./components/QuoteBox";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Nav } from "react-bootstrap";
 
 function App() {
   return (
     <div className="App">
-      <Nav>
-        <Header className="header" />
-      </Nav>
+      <h1 id="header" className="row justify-content-center">
+        Random Quote Generator
+      </h1>
       <QuoteBox />
-      <Nav>
-        <Footer className="footer" />
-      </Nav>
+      <p id="footer" className="row justify-content-center">
+        Made with ❤️
+      </p>
     </div>
   );
 }
